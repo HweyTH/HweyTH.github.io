@@ -828,6 +828,24 @@
                 sidebar.classList.toggle("collapsed");
                 mainContent.classList.toggle("expanded");
             }
+
+            // Search function
+            const searchInput = document.querySelector(".search-input");
+            searchInput.addEventListener("input", function() {
+                const searchTerm = this.value.toLowerCase();
+                const videoCards = document.querySelectorAll(".video-card");
+
+                videoCards.forEach(card => {
+                    const title = card.querySelector(".video-title").textContent.toLowerCase();
+                    const metadata = card.querySelector(".video-metadata").textContent.toLowerCase();
+
+                    if (title.includes(searchTerm) || metadata.includes(searchTerm)) {
+                        card.style.display = '';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });    
         </script>
     </head>
 </html>
