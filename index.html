@@ -449,6 +449,77 @@
                 opacity: 0.8;
             }
 
+            .framework-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 16px;
+                padding: 16px;
+            }
+
+            .framework-card {
+                background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
+                border-radius: 12px;
+                padding: 20px;
+                display: flex;
+                align-items: center;
+                gap: 16px;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                cursor: pointer;
+                border: 1px solid #303030;
+            }
+
+            .framework-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+                border-color: #ff6b6b;
+            }
+
+            .framework-icon {
+                width: 48px;
+                height: 48px;
+                background: linear-gradient(45deg, #ff6b6b, #ff0000);
+                border-radius: 12px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 24px;
+                color: white;
+            }
+
+            .framework-info {
+                flex: 1;
+            }
+
+            .framework-info h3 {
+                font-size: 14px;
+                margin-bottom: 8px;
+                color: white;
+            }
+
+            .proficiency-bar {
+                height: 4px;
+                background: #303030;
+                border-radius: 2px;
+                overflow: hidden;
+            }
+
+            .proficiency-level {
+                height: 100%;
+                background: linear-gradient(90deg, #ff6b6b, #ff0000);
+                border-radius: 2px;
+                transition: width 0.3s ease;
+            }
+
+            @keyframes pulse {
+                0% { transform: scale(1); }
+                50% { transform: scale(1.05); }
+                100% { transform: scale(1); }
+            }
+
+            .framework-card:hover .framework-icon {
+                animation: pulse 1s infinite;
+            }
+
         </style>
         <body>
             <!--Header-->
@@ -558,26 +629,67 @@
                 <div class="sidebar-divider"></div>
                 <div class="sidebar-heading">Frameworks and Libraries</div>
                 <div class="sidebar-section">
-                    <a href="#" class="sidebar-item">
-                        <div class="sidebar-item-icon"></div>
-                        React / React Native
-                    </a>
-                    <a href="#" class="sidebar-item">
-                        <div class="sidebar-item-icon"></div>
-                        Node.js / Express.js
-                    </a>
-                    <a href="#" class="sidebar-item">
-                        <div class="sidebar-item-icon"></div>
-                        Flask
-                    </a>
-                    <a href="#" class="sidebar-item">
-                        <div class="sidebar-item-icon"></div>
-                        TensorFlow / PyTorch
-                    </a>
-                    <a href="#" class="sidebar-item">
-                        <div class="sidebar-item-icon"></div>
-                        Bootstrap & Tailwind CSS
-                    </a>
+                    <div class="framework-grid">
+                        <div class="framework-card">
+                            <div class="framework-icon">
+                                <i class="fab fa-react"></i>
+                            </div>
+                            <div class="framework-info">
+                                <h3>React & React Native</h3>
+                                <div class="proficiency-bar">
+                                    <div class="proficiency-level" style="width: 90%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="framework-card">
+                            <div class="framework-icon">
+                                <i class="fab fa-node-js"></i>
+                            </div>
+                            <div class="framework-info">
+                                <h3>Node.js & Express.js</h3>
+                                <div class="proficiency-bar">
+                                    <div class="proficiency-level" style="width: 85%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="framework-card">
+                            <div class="framework-icon">
+                                <i class="fas fa-flask"></i>
+                            </div>
+                            <div class="framework-info">
+                                <h3>Flask</h3>
+                                <div class="proficiency-bar">
+                                    <div class="proficiency-level" style="width: 80%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="framework-card">
+                            <div class="framework-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div class="framework-info">
+                                <h3>TensorFlow & PyTorch</h3>
+                                <div class="proficiency-bar">
+                                    <div class="proficiency-level" style="width: 75%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="framework-card">
+                            <div class="framework-icon">
+                                <i class="fab fa-bootstrap"></i>
+                            </div>
+                            <div class="framework-info">
+                                <h3>Bootstrap & Tailwind CSS</h3>
+                                <div class="proficiency-bar">
+                                    <div class="proficiency-level" style="width: 85%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="sidebar-divider"></div>
