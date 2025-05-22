@@ -564,20 +564,21 @@
             .tool-grid {
                 display: grid;
                 grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-                gap: 16px;
-                padding: 16px;
+                gap: 20px;
+                padding: 20px;
             }
 
             .tool-card {
                 width: 100%;
                 height: 160px;
                 perspective: 1000px;
+                cursor: pointer;
             }
             
             .flip-inner {
                 width: 100%;
                 height: 100%;
-                transition: transform 0.6s;
+                transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
                 transform-style: preserve-3d;
                 position: relative;
             }
@@ -593,14 +594,15 @@
                 backface-visibility: hidden;
                 background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
                 border: 1px solid #303030;
-                border-radius: 12px;
+                border-radius: 16px;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
                 gap: 12px;
-                padding: 20px;
+                padding: 24px;
                 transition: all 0.3s ease;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             }
 
             .flip-front { 
@@ -608,15 +610,21 @@
             }
 
             .flip-front i {
-                font-size: 32px;
+                font-size: 36px;
                 color: #ff6b6b;
-                margin-bottom: 8px;
+                margin-bottom: 12px;
+                transition: transform 0.3s ease;
+            }
+
+            .tool-card:hover .flip-front i {
+                transform: scale(1.1);
             }
 
             .flip-front p {
                 font-size: 16px;
-                font-weight: 500;
+                font-weight: 600;
                 text-align: center;
+                letter-spacing: 0.5px;
             }
 
             .flip-back {
@@ -627,64 +635,32 @@
 
             .flip-back p {
                 text-align: center;
-                line-height: 1.4;
+                line-height: 1.6;
+                font-size: 14px;
+                color: #e0e0e0;
             }
 
             .flip-back p:last-child {
                 color: #ff6b6b;
-                font-weight: 500;
+                font-weight: 600;
+                font-size: 16px;
+                margin-top: 8px;
             }
 
             .tool-card:hover .flip-front,
             .tool-card:hover .flip-back {
                 border-color: #ff6b6b;
-                box-shadow: 0 4px 12px rgba(255, 107, 107, 0.2);
+                box-shadow: 0 8px 16px rgba(255, 107, 107, 0.15);
             }
 
-            /* Tool Styles */
-            .tool-card {
-                width: 180px;
-                height: 180px;
-                perspective: 1000px;
-            }
-            
-            .flip-inner {
-                width: 100%;
-                height: 100%;
-                transition: transform 0.6s;
-                transform-style: preserve-3d;
-                position: relative;
+            @keyframes toolHover {
+                0% { transform: translateY(0); }
+                50% { transform: translateY(-5px); }
+                100% { transform: translateY(0); }
             }
 
-            .tool-card:hover .flip-inner {
-                transform: rotateY(180deg);
-            }
-
-            .flip-front, .flip-back {
-                position: absolute;
-                width: 100%;
-                height: 100%; 
-                backface-visibility: hidden;
-                background: #1a1a1a;
-                border: 1px solid #303030;
-                border-radius: 12px;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                gap: 8px;
-                padding: 16px;
-            }
-
-            .flip-front { 
-                color: white;
-                font-size: 24px;
-            }
-
-            .flip-back {
-                transform: rotateY(180deg);
-                background: #252525;
-                color: #ff6b6b;
+            .tool-card:hover {
+                animation: toolHover 0.6s ease;
             }
 
         </style>
@@ -739,6 +715,14 @@
                             </svg>
                         </div>
                         Github
+                    </a>
+                    <a href="https://www.linkedin.com/in/ghuythai" target="_blank" rel="noopener noreferrer" class="sidebar-item">
+                        <div class="sidebar-item-icon">
+                            <svg height="24" viewBox="0 0 448 512" width="24" fill="white">
+                                <path d="m100.28 448h-92.88v-299.1h92.88zm-46.49-339.9c-29.7 0-53.79-24.6-53.79-54.3a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zm394.11 339.9h-92.68v-145.6c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7v148.1h-92.78v-299.1h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3v164.3z"/>
+                            </svg>
+                        </div>
+                        LinkedIn
                     </a>
                     <a href="https://devpost.com/HweyTH" target="_blank" rel="noopener noreferrer" class="sidebar-item">
                         <div class="sidebar-item-icon">
@@ -890,7 +874,7 @@
                 <div class="framework-grid">
                     <div class="database-card">
                         <div class="database-icon">
-                            <svg height="32" viewBox="0 0 32 32" width="32" xmlns="http://www.w3.org/2000/svg"><path d="m22.797 14.562c-.067-.774-.209-1.546-.407-2.297-.625-2.369-1.666-4.637-3.134-6.603-.4-.536-.832-1.048-1.294-1.532-.476-.499-1.004-.957-1.336-1.578-.21-.393-.41-.791-.614-1.187-.003.124-.011.248-.011.371 0-.124.009-.248.011-.372-.038-.095-.076-.191-.13-.327-.022.075-.036.101-.036.129-.017.645-.383 1.083-.838 1.492-.512.46-.989.959-1.481 1.441.017.022.036.044.055.066-.019-.022-.038-.043-.055-.066-1.463 1.924-2.752 3.981-3.511 6.29-.221.672-.395 1.359-.517 2.056-.259 1.481-.379 2.92-.296 4.42.046.829.191 1.645.407 2.448.785 2.917 2.379 5.336 4.558 7.392.405.382.382.842.729 1.093.001-.004.002-.007.003-.011-.001.004-.002.007-.003.011.062.214.125.428.187.642.058.332.116.664.174.996.028.346.055.693.083 1.039-.001.211-.01.423.003.633.003.054.074.104.113.156.001-.002.002-.004.004-.006-.001.002-.002.004-.004.006.118.041.235.083.353.124.106.041.212.083.367.143-.023-.346-.043-.635-.063-.924-.001-.303-.002-.607-.003-.91-.006.007-.014.014-.021.021.007-.007.014-.014.021-.021.042-.462.085-.924.127-1.386.031-.101.061-.201.092-.302.088-.156.175-.311.263-.467.325-.262.674-.499.971-.79.536-.527 1.071-1.06 1.55-1.637.622-.748 1.158-1.565 1.588-2.441 1.223-2.491 1.789-5.269 1.564-8.039-.002-.024-.004-.049-.006-.074z" fill="#444"/></svg>
+                            <svg height="32" viewBox="0 0 32 32" width="32" xmlns="http://www.w3.org/2000/svg"><path d="m22.797 14.562c-.067-.774-.209-1.546-.407-2.297-.625-2.369-1.666-4.637-3.134-6.603-.4-.536-.832-1.048-1.294-1.532-.476-.499-1.004-.957-1.336-1.578-.21-.393-.41-.791-.614-1.187-.003.124-.011.248-.011.371 0-.124.009-.248.011-.372-.038-.095-.076-.191-.191-.327-.022.075-.036.101-.036.129-.017.645-.383 1.083-.838 1.492-.512.46-.989.959-1.481 1.441.017.022.036.044.055.066-.019-.022-.038-.043-.055-.066-1.463 1.924-2.752 3.981-3.511 6.29-.221.672-.395 1.359-.517 2.056-.259 1.481-.379 2.92-.296 4.42.046.829.191 1.645.407 2.448.785 2.917 2.379 5.336 4.558 7.392.405.382.382.842.729 1.093.001-.004.002-.007.003-.011-.001.004-.002.007-.003.011.062.214.125.428.187.642.058.332.116.664.174.996.028.346.055.693.083 1.039-.001.211-.01.423.003.633.003.054.074.104.113.156.001-.002.002-.004.004-.006-.001.002-.002.004-.004.006.118.041.235.083.353.124.106.041.212.083.367.143-.023-.346-.043-.635-.063-.924-.001-.303-.002-.607-.003-.91-.006.007-.014.014-.021.021.007-.007.014-.014.021-.021.042-.462.085-.924.127-1.386.031-.101.061-.201.092-.302.088-.156.175-.311.263-.467.325-.262.674-.499.971-.79.536-.527 1.071-1.06 1.55-1.637.622-.748 1.158-1.565 1.588-2.441 1.223-2.491 1.789-5.269 1.564-8.039-.002-.024-.004-.049-.006-.074z" fill="#444"/></svg>
                         </div>
                         <div class="framework-info">
                             <h3>MongoDB</h3>
