@@ -664,6 +664,61 @@
                 animation: toolHover 0.6s ease;
             }
 
+            /* Notification Styles */
+            .notif-wrapper {
+                position: relative;
+                display: inline-block;
+            }
+
+            .notif-dropdown {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 48px;
+                right: 0;
+                width: 300px;
+                max-height: 400px;
+                overflow-y: auto;
+                background-color: #181818;
+                border: 1px solid #303030;
+                border-radius: 8px;
+                box-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+                z-index: 1000;
+                padding: 8px 0;
+            }
+
+            .notif-dropdown.active {
+                display: flex;
+            }
+
+            .notif-item {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 12px 16px;
+                color: #e0e0e0;
+                font-size: 14px;
+                cursor: pointer;
+                transition: background-color 0.15s ease;
+            }
+
+            .notif-item:hover {
+                background-color: #2a2a2a;
+            }
+
+            .notif-item {
+                flex: 1;
+                margin-right: 12px;
+                line-height: 1.2;
+            }
+
+            .notif-time {
+                font-size: 12px;
+                color: #888888;
+                white-space: nowrap;
+            }
+
+
         </style>
         <body>
             <!--Header-->
@@ -691,18 +746,31 @@
                 </div>
 
                 <div class="header-right">
+                    <!--Temporary Button-->
                     <button class="icon-btn">
-                        <!-- Temporary icon-->
                         <i class="fas fa-plus"></i> 
                     </button>
-                    <button class="icon-btn">
-                        <svg height="24" viewBox="0 0 512 512" width="24" xmlns="http://www.w3.org/2000/svg">
-                            <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32">
-                                <path d="m427.68 351.43c-25.68-31.43-43.81-47.43-43.81-134.08 0-79.35-40.52-107.62-73.87-121.35-4.43-1.82-8.6-6-9.95-10.55-5.85-19.91-22.25-37.45-44.05-37.45s-38.21 17.55-44 37.47c-1.35 4.6-5.52 8.71-9.95 10.53-33.39 13.75-73.87 41.92-73.87 121.35-.05 86.65-18.18 102.65-43.86 134.08-10.64 13.02-1.32 32.57 17.29 32.57h308.88c18.51 0 27.77-19.61 17.19-32.57z"/>
-                                <path d="m320 384v16a64 64 0 0 1 -128 0v-16"/>
-                            </g>
-                        </svg>
-                    </button>
+
+                    <!--Notification Button-->
+                    <div class="notif-wrapper">
+                        <button id="notifBtn" class="icon-btn">
+                            <svg height="24" viewBox="0 0 512 512" width="24" xmlns="http://www.w3.org/2000/svg">
+                                <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32">
+                                    <path d="m427.68 351.43c-25.68-31.43-43.81-47.43-43.81-134.08 0-79.35-40.52-107.62-73.87-121.35-4.43-1.82-8.6-6-9.95-10.55-5.85-19.91-22.25-37.45-44.05-37.45s-38.21 17.55-44 37.47c-1.35 4.6-5.52 8.71-9.95 10.53-33.39 13.75-73.87 41.92-73.87 121.35-.05 86.65-18.18 102.65-43.86 134.08-10.64 13.02-1.32 32.57 17.29 32.57h308.88c18.51 0 27.77-19.61 17.19-32.57z"/>
+                                    <path d="m320 384v16a64 64 0 0 1 -128 0v-16"/>
+                                </g>
+                            </svg>
+                        </button>
+
+                        <div id="notifDropdown" class="notif-dropdown">
+                            <div class="notif-item">
+                                <span class="notif-title">Welcome to my website!</span>
+                                <span class="notif-time">Just now</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Profile Button-->
                     <button class="profile-btn"></button>
                 </div>
 
@@ -1216,7 +1284,29 @@
                         card.style.display = 'none';
                     }
                 });
-            });    
+            });
+            
+            // Notification Dropdown Function
+            const notifBtn = document.getElementById('notifBtn');
+            const notifDropdown = document.getElementById('notifDropdown');
+
+            notifBtn.addEventListener('click', function(event) {
+                event.stopPropagation();
+                notifDropdown.classList.toggle('active');
+            });
+
+            document.addEventListener('click', function(event) {
+                const isClickInside = notifBtn.contains(event.target) || notifDropdown.contains(event.target);
+
+                if (!isClickInside) {
+                    notifDropdown.classList.remove('active');
+                }
+            });
+
+            notifBtn.addEventListener("click", function() {
+                notifDropdown.scrollTop = 0;
+            });
+            
         </script>
     </head>
 </html>
