@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>My Portfolio</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet"/>
         <style> 
             * {
                 margin: 0;
@@ -43,7 +44,7 @@
             /* Header Center Styles */
             .header-center {
                 flex: 1;
-                max-width: 728px;
+                max-width: 500px;
                 display: flex;
                 gap: 8px;
                 margin: 0 40px;
@@ -747,6 +748,87 @@
                 font-size: 12px;
             }
 
+            /* Profile Dropdown Styles */
+            .profile-wrapper {
+                position: relative;
+                display: inline-block;
+            }
+
+            .profile-dropdown {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 48px;
+                right: 0;
+                width: 400px;
+                max-height: 600px;
+                overflow-y: auto;
+                background-color: #181818;
+                border: 1px solid #303030;
+                border-radius: 8px;
+                box-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+                z-index: 1000;
+                padding: 8px 0;
+            }
+
+            .profile-dropdown.active {
+                display: flex;
+            }
+
+            .profile-header {
+                padding: 20px;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                border-bottom: 1px solid #303030;
+            }
+
+            .profile-avatar {
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                background: url(avatar.jpeg) center/cover;
+            }
+
+            .profile-name {
+                font-family: "Montserrat", sans-serif;
+                font-size: 30px;
+                color: #ffffff;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            }
+
+            .profile-name:hover {
+                background-position: right center;
+            }
+
+            .profile-degree {
+                font-family: "Montserrat", sans-serif;
+                font-weight: 400;
+                font-size: 10px;
+                color: #ffffff;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                margin-top: 0.25rem;
+            }
+
+            .profile-main {
+                font-family: "Roboto", sans-serif;
+                font-size: 0.875rem;
+                color: #e0e0e0;
+                line-height: 1.4;
+                text-align: left;
+                padding: 1rem;
+                border-bottom: 1px solid #303030;
+            }
+
+            .profile-footer {
+                padding: 1rem; 
+                color: #888;
+                font-size: 12px;
+            }
+
 
         </style>
         <body>
@@ -810,7 +892,30 @@
                     </div>
 
                     <!--Profile Button-->
-                    <button class="profile-btn"></button>
+                    <div class="profile-wrapper">
+                        <button id="profileBtn" class="profile-btn"></button>
+
+                        <div id="profileDropdown" class="profile-dropdown">
+                            <div class="profile-header">
+                                <div class="profile-avatar"></div>
+                                <div class="profile-name">Gia Huy Thai</div>
+                                <div class="profile-degree">Honours Bachelor of Science</div>
+                            </div>
+
+                            <div class="profile-main">
+                                Hi there! I'm Huy (or you can call me Hwey/Huey). 
+                                I studied Applied Statistics and Computer Science at University of Toronto Mississauga. 
+                                Currently, I am pursuing a career in Data Analytics and Software Engineering.
+                                But even more than that, this page is where I want to show my entire progress in horning my skills, trying out new technologies, and exploring different aspects in the field of Computer Science that I might not know I am capable of.
+                                This portfolio is my unique twist in the UI of Youtube.com, a site where I found myself on everytime I want to relax myself after a long day of work.
+                            </div>
+
+                            <div class="profile-footer">
+                                This section is under construction.
+                            </div>
+                        </div>
+                    </div>
+                    
                 </div>
 
             </header>
@@ -1364,6 +1469,27 @@
 
             notifBtn.addEventListener("click", function() {
                 notifDropdown.scrollTop = 0;
+            });
+
+            // Profile Dropdown Function 
+            const profileBtn = document.getElementById('profileBtn');
+            const profileDropdown = document.getElementById('profileDropdown');
+
+            profileBtn.addEventListener('click', function(event) {
+                event.stopPropagation();
+                profileDropdown.classList.toggle('active');
+            });
+
+            document.addEventListener('click', function(event) {
+                const isClickInside = profileBtn.contains(event.target) || profileDropdown.contains(event.target);
+
+                if(!isClickInside) {
+                    profileDropdown.classList.remove('active');
+                }
+            });
+
+            profileBtn.addEventListener("click", function() {
+                profileDropdown.scrollTop = 0;
             });
             
         </script>
