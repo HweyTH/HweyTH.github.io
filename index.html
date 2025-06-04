@@ -1356,7 +1356,7 @@
                 <!--Video Grid-->
                 <div class="video-grid">
                     <!--Project Card 0-->
-                    <div class="video-card">
+                    <div class="video-card" data-category="NA">
                         <div class="video-thumbnail">
                             <div class="video-duration">Demo</div>
                         </div>
@@ -1374,7 +1374,7 @@
                     </div>
 
                     <!--Project Card 1-->
-                    <div class="video-card">
+                    <div class="video-card" data-category="NA">
                         <div class="video-thumbnail">
                             <div class="video-duration">Demo</div>
                         </div>
@@ -1392,7 +1392,7 @@
                     </div>
 
                     <!--Project Card 2-->
-                    <div class="video-card">
+                    <div class="video-card" data-category="NA">
                         <div class="video-thumbnail">
                             <div class="video-duration">Demo</div>
                         </div>
@@ -1410,7 +1410,7 @@
                     </div>
 
                     <!--Project Card 3-->
-                    <div class="video-card">
+                    <div class="video-card" data-category="NA">
                         <div class="video-thumbnail">
                             <div class="video-duration">Demo</div>
                         </div>
@@ -1428,7 +1428,7 @@
                     </div>
 
                     <!--Project Card 3-->
-                    <div class="video-card">
+                    <div class="video-card" data-category="NA">
                         <div class="video-thumbnail">
                             <div class="video-duration">Demo</div>
                         </div>
@@ -1446,7 +1446,7 @@
                     </div>
 
                     <!--Project Card 4-->
-                    <div class="video-card">
+                    <div class="video-card" data-category="NA">
                         <div class="video-thumbnail">
                             <div class="video-duration">Paper Review</div>
                         </div>
@@ -1464,7 +1464,7 @@
                     </div>
 
                     <!--Project Card 5-->
-                    <div class="video-card">
+                    <div class="video-card" data-category="NA">
                         <div class="video-thumbnail">
                             <div class="video-duration">Analysis</div>
                         </div>
@@ -1482,7 +1482,7 @@
                     </div>
 
                     <!--Project Card 6-->
-                    <div class="video-card">
+                    <div class="video-card" data-category="NA">
                         <div class="video-thumbnail">
                             <div class="video-duration">Demo</div>
                         </div>
@@ -1500,7 +1500,7 @@
                     </div>
 
                     <!--Project Card 7-->
-                    <div class="video-card">
+                    <div class="video-card" data-category="NA">
                         <div class="video-thumbnail">
                             <div class="video-duration">Demo</div>
                         </div>
@@ -1518,7 +1518,7 @@
                     </div>
 
                     <!--Project Card 8-->
-                    <div class="video-card">
+                    <div class="video-card" data-category="NA">
                         <div class="video-thumbnail">
                             <div class="video-duration">Demo</div>
                         </div>
@@ -1535,8 +1535,8 @@
                         </div>
                     </div>
 
-                    <!--Project Card 1-->
-                    <div class="video-card">
+                    <!--Project Card 9-->
+                    <div class="video-card" data-category="NA">
                         <div class="video-thumbnail">
                             <div class="video-duration">Demo</div>
                         </div>
@@ -1624,6 +1624,21 @@
             profileBtn.addEventListener("click", function() {
                 profileDropdown.scrollTop = 0;
             });
+
+            // Filter by Chip Function
+            const filterChips = document.querySelectorAll(".filter-chip");
+            const videoCards = document.querySelectorAll(".video-card");
+
+            filterChips.forEach(chip => {
+                // Hightlight the clicked chip and unhighlight the rest
+                chip.addEventListener("click", () => {
+                    filterChips.forEach(c => c.classList.remove("active"));
+                    chip.classList.add("active");
+                })
+
+                // Filter the video cards based on the chip's data-category attribute
+            });
+            
             
         </script>
     </head>
