@@ -1342,15 +1342,15 @@
             <main class="main-content" id="mainContent">
                 <!--Filter Bar-->
                 <div class="filter-bar">
-                    <button class="filter-chip active">All</button>
-                    <button class="filter-chip">AI/ML</button>
-                    <button class="filter-chip">Data Analysis</button>
-                    <button class="filter-chip">Database</button>
-                    <button class="filter-chip">Deep Learning</button>
-                    <button class="filter-chip">Game Development</button>
-                    <button class="filter-chip">Mobile App</button>
-                    <button class="filter-chip">Software Development</button>
-                    <button class="filter-chip">Web Development</button>
+                    <button class="filter-chip active" data-filter="All">All</button>
+                    <button class="filter-chip" data-filter="AI/ML">AI/ML</button>
+                    <button class="filter-chip" data-filter="Data Analysis">Data Analysis</button>
+                    <button class="filter-chip" data-filter="Database">Database</button>
+                    <button class="filter-chip" data-filter="Deep Learning">Deep Learning</button>
+                    <button class="filter-chip" data-filter="Game Development">Game Development</button>
+                    <button class="filter-chip" data-filter="Mobile App">Mobile App</button>
+                    <button class="filter-chip" data-filter="Software Development">Software Development</button>
+                    <button class="filter-chip" data-filter="Web Development">Web Development</button>
                 </div>
 
                 <!--Video Grid-->
@@ -1634,9 +1634,24 @@
                 chip.addEventListener("click", () => {
                     filterChips.forEach(c => c.classList.remove("active"));
                     chip.classList.add("active");
-                })
+                    // Get filter chip category
+                    const selectedFilter = chip.getAttribute("data-filter");
+                    
+                    // Filter the video cards based on the chip's data-category attribute
+                    videoCards.forEach(card => {
+                        const categories = card.getAttribute("data-category").split(",").map(str => str.trim());
 
-                // Filter the video cards based on the chip's data-category attribute
+                        if (selectedFilter === "All") {
+                            card.style.display = "";
+                        } else {
+                            if (categories.includes(selectedFilter)) {
+                                card.style.display = "";
+                            } else {
+                                card.style.display = "none";
+                            }
+                        }
+                    })
+                });
             });
             
             
