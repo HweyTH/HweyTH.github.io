@@ -183,6 +183,10 @@
                 background-color: #3d3d3d;
             }
 
+            .sidebar-item-icon {
+                cursor: pointer;
+            }
+
             .sidebar-divider {
                 height: 1px;
                 background-color: #303030;
@@ -914,15 +918,12 @@
                 overflow-x: auto;
                 white-space: nowrap;
                 margin-bottom: 16px;
+                scrollbar-width: none;
+                -ms-overflow-style: noneß;
             }
 
             .filter-bar::-webkit-scrollbar {
-                height: 6px;
-            }
-
-            .filter-bar::-webkit-scrollbar-thumb {
-                background-color: #606060;
-                border-radius: 3px;
+                display: none;
             }
 
             /* Filter Chip Styles */
@@ -1392,6 +1393,7 @@
                     <button class="filter-chip" data-filter="Database">Database</button>
                     <button class="filter-chip" data-filter="Deep Learning">Deep Learning</button>
                     <button class="filter-chip" data-filter="Game Development">Game Development</button>
+                    <button class="filter-chip" data-filter="Hackathon">Hackathon</button>
                     <button class="filter-chip" data-filter="Mobile App">Mobile App</button>
                     <button class="filter-chip" data-filter="Software Development">Software Development</button>
                     <button class="filter-chip" data-filter="Web Development">Web Development</button>
@@ -1712,6 +1714,9 @@
                     closeResumeModal();
                 }
             });
+
+            // 
+
             
             
         </script>
