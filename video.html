@@ -948,6 +948,58 @@
             .description-collapsed {
                 max-height: 60px;
                 overflow: hidden;
+                position: relative;
+            }
+
+            .description-collapsed::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 20px;
+                background: linear-gradient(transparent, #181818);
+                pointer-events: none;
+            }
+
+            /*Show More Button Styles*/
+            .show-more-btn {
+                background: none;
+                border: none;
+                color: #aaaaaa;
+                cursor: pointer;
+                padding: 8px 0;
+                font-size: 14px;
+                font-weight: 500;
+                margin-top: 8px;
+                transition: color 0.2s ease;
+                display: flex;
+                align-items: center;
+                gap: 4px;
+            }
+
+            .show-more-btn:hover {
+                color: #ffffff;
+            }
+
+            .show-more-btn svg {
+                width: 16px;
+                height: 16px;
+                transition: transform 0.2s ease;
+            }
+
+            .show-more-btn.expanded svg {
+                transform: rotate(180deg);
+            }
+
+            /*Video Description Expanded Styles*/
+            .description-expanded {
+                max-height: none;
+                overflow: visible;
+            }
+
+            .description-expanded::after {
+                display: none;
             }
 
             /*Video Comment Section Styles*/
@@ -1481,7 +1533,12 @@
                             • MongoDB database integration
                             • Video upload and streaming
                         </div>
-                        <button class="show-more-btn">Show more</button>
+                        <button class="show-more-btn" id="showMoreBtn">
+                            Show more
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                            </svg>
+                        </button>
                     </div>
                 </div>
 
@@ -1598,19 +1655,21 @@
                 // Create and append new thumbnails
                 images.forEach((image, idx) => {
                     const thumbnail = document.createElement("div");
-                    thumbnail.className = "gallery-thumbnail" + (idx === 0 ? "active" : "");
+                    thumbnail.className = "gallery-thumbnail" + (idx === 0 ? " active" : "");
                     thumbnail.innerHTML = `<img src="${image}" alt="Gallery Thumbnail ${idx + 1}">`;
                     thumbnail.onclick = function() {
                         mainPhoto.src = image;
                         document.querySelectorAll(".gallery-thumbnail").forEach(t => t.classList.remove("active"));
                         thumbnail.classList.add("active");
                     };
+                
                     galleryThumbnails.appendChild(thumbnail);
                 });
+            }
 
             document.addEventListener("DOMContentLoaded", function() {
                 renderGallery(galleryImages);
-            })
+            });
 
             // Function to toggle sidebar
             function toggleSidebar() {
@@ -1675,6 +1734,42 @@
             document.addEventListener("keydown", function(event) {
                 if (event.key === "Escape") {
                     closeResumeModal();
+                }
+            });
+
+            // Show More Button Functionality
+            document.addEventListener("DOMContentLoaded", function() {
+                const showMoreBtn = document.getElementById('showMoreBtn');
+                const descriptionText = document.querySelector('.video-description-text');
+                
+                if (showMoreBtn && descriptionText) {
+                    showMoreBtn.addEventListener('click', function() {
+                        const isCollapsed = descriptionText.classList.contains('description-collapsed');
+                        
+                        if (isCollapsed) {
+                            // Expand the description
+                            descriptionText.classList.remove('description-collapsed');
+                            descriptionText.classList.add('description-expanded');
+                            showMoreBtn.classList.add('expanded');
+                            showMoreBtn.innerHTML = `
+                                Show less
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                                </svg>
+                            `;
+                        } else {
+                            // Collapse the description
+                            descriptionText.classList.remove('description-expanded');
+                            descriptionText.classList.add('description-collapsed');
+                            showMoreBtn.classList.remove('expanded');
+                            showMoreBtn.innerHTML = `
+                                Show more
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                                </svg>
+                            `;
+                        }
+                    });
                 }
             });
         </script>
