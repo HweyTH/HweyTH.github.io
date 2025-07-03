@@ -704,7 +704,7 @@
                 animation: pulse 1s infinite;
             }
 
-            /*Video Content Styles*/
+            /*Main Content Styles*/
             .main-content {
                 margin-left: 240px;
                 margin-top: 56px;
@@ -714,19 +714,49 @@
                 display: flex;
                 gap: 24px;
                 padding: 24px;
+                overscroll-behavior: contain;
+                -webkit-overflow-scrolling: touch;
+                scroll-behavior: smooth;
+                overflow-x: hidden;
             }
             .main-content.expanded {
                 margin-left: 0;
             }
 
+            @media (max-width: 768px) {
+                .main-content {
+                    overscroll-behavior: contain;
+                    -webkit-overflow-scrolling: touch;
+                    overscroll-behavior-y: contain;
+                }
+
+                .sidebar {
+                    overscroll-behavior: contain;
+                    -webkit-overflow-scrolling: touch;
+                    overscroll-behavior-y: contain;
+                }
+            }
+
+            /*Video Title Styles*/
             .video-title {
-
+                font-size: 20px;
+                font-weight: 600;
+                color: #ffffff;
+                margin-bottom: 12px;
+                line-height: 1.4;
             }
 
+            /*Video Stats Styles*/
             .video-stats {
-                
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 16px;
+                padding-bottom: 16px;
+                border-bottom: 1px solid #303030;
             }
 
+            /*Video Content Styles*/
             .video-content {
                 flex: 1;
                 max-width: none;
@@ -783,6 +813,8 @@
                 padding: 16px;
                 margin-bottom: 16px;
             }
+
+            /*Project Author Styles*/
             .project-author {
                 display: flex;
                 align-items: center;
@@ -809,6 +841,7 @@
             .video-main {
                 flex: 1;
                 max-width: calc(100% - 400px);
+                flex-direction: column;
             }
 
             /*Video Sidebar Styles*/
@@ -828,6 +861,7 @@
                 margin-bottom: 16px;
             }
 
+            /*Video Player Video Styles*/
             .video-player video {
                 width: 100%;
                 height: 100%;
@@ -846,12 +880,147 @@
                 transition: opacity 0.3s ease;
             }
 
+            /*Video Controls Hover Effect*/
             .video-player:hover .video-controls {
                 opacity: 1;
             }
 
+            /*Action Buttons Styles*/
+            .action-buttons {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                background: none;
+                border: none;
+                color: #aaaaaa;
+                cursor: pointer;
+                padding: 8px 12px;
+                border-radius: 18px;
+                transition: background-color 0.2s ease;
+                font-size: 14px;
+                font-weight: 500;
+            }
         
+            /*Action Buttons Hover Effect*/
+            .action-buttons:hover{
+                background: #303030;
+                color: #ffffff;
+            }
 
+            /*Channel Info Styles*/
+            .channel-info {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 16px 0;
+                border-bottom: 1px solid #303030;
+                margin-bottom: 16px;
+            }
+
+            /*Channel Avatar Styles*/
+            .channel-avatar {
+                width: 48px;
+                height: 48px;
+                border-radius: 50%;
+                background: url(avatar.jpeg) center/cover;
+                cursor: pointer;
+            }
+
+            /*Video Description Styles*/
+            .video-description {
+                background: #181818;
+                border-radius: 12px;
+                padding: 16px;
+                margin-bottom: 24px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+
+            /*Video Description Text Styles*/
+            .video-description-text {
+                color: #ffffff;
+                font-size: 14px;
+                line-height: 1.5;
+                white-space: pre-line;
+            }
+
+            /*Video Description Collapsed Styles*/
+            .description-collapsed {
+                max-height: 60px;
+                overflow: hidden;
+            }
+
+            /*Video Comment Section Styles*/
+            .video-comments {
+                margin-bottom: 24px;
+            }
+
+            /*Video Comments Header Styles*/
+            .video-comments-header {
+                display: flex; 
+                align-items: center;
+                gap: 12px;
+                margin-bottom: 24px;
+            }
+
+            /*Photo Gallery Styles*/
+            .photo-gallery {
+                width: 100%;
+                margin-top: 24px;
+            }
+
+            /*Main Photo Styles*/
+            .main-photo {
+                width: 100%;
+                aspect-ratio: 16/9;
+                background: #000;
+                border-radius: 12px;
+                overflow: hidden;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 12px;
+            }
+
+            /*Main Photo Image Styles*/
+            .main-photo img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            /*Gallery Thumbnail Styles*/
+            .gallery-thumbnails {
+                display: flex;
+                gap: 8px;
+                overflow-x: auto;    
+            }
+
+            /*Gallery Thumbnail Item Styles*/
+            .gallery-thumbnail {
+                width: 100px;
+                height: 56px;
+                border-radius: 6px;
+                overflow: hidden;
+                cursor: pointer;
+                opacity: 0.7;
+                border: 2px solid transparent;
+                transition: opacity 0.2s, border 0.2s;
+            }
+
+            /*Gallery Thumbnail Active Styles*/
+            .gallery-thumbnail.active,
+            .gallery-thumbnail:hover {
+                opacity: 1;
+                border: 2px solid #ff6b6b;
+            }
+
+            /*Gallery Thumbnail Image Styles*/
+            .gallery-thumbnail img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
         </style>
     </head>
     <body>
@@ -1251,64 +1420,137 @@
             </div>
         </nav>
 
+        <!--Main Content-->
         <main class="main-content" id="mainContent"">
             <div class="video-container">
                 <!---Main Video Section-->
                 <div class="video-main">
-                    <div class="video-player">
-                        <!---Video Player & Thumbnail-->
-                        <!--TODO: Add Video Source & Thumbnail-->
-                        <video src="https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4" poster="https://via.placeholder.com/1280x720/333/666?text=Video+Thumbnail" controls>
-                            Your browser does not support the video tag.
-                        </video>
-                        
-                        <!---Video Controls-->
-                        <div class="video-controls">
-                            <div class="control-buttons">
-                                <div class="control-left">
-                                    
+                    <!--Media Display Section-->
+                    <div class="media-display">
+                        <div class="video-player">
+                            <!---Video Player & Thumbnail-->
+                            <!--TODO: Add Video Source & Thumbnail-->
+                            <!-- <video src="https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4" poster="https://via.placeholder.com/1280x720/333/666?text=Video+Thumbnail" controls>
+                                Your browser does not support the video tag.
+                            </video> -->
+
+                            <!--Photo Gallery-->
+                            <div class="photo-gallery">
+                                <div class="photo-item">
+                                    <div class="main-photo">
+                                        <img id="mainPhoto" src="/signstreak/thumbnail.png" alt="Main Project Photo">
+                                    </div>
+
+                                    <!--Gallery Thumbnails-->
+                                    <div class="gallery-thumbnails" id="galleryThumbnails">
+                                    </div>
                                 </div>
                             </div>
+                     
                         </div>
+                    </div>
+                    
+                    <!--Video Info Section-->
+                    <div class="project-info">
+                        <h1 class="project-title" id="projectTitle">Building a Youtube-inspired Portfolio With Next.js and Tailwind CSS</h1>
+                        <div class="project-description" id="projectDescription">
+                            Clean, focused project description without social elements.
+                        </div>
+                    </div>
+
+                    <!--Channel Info Section-->
+                    <div class="channel-info">
+                        <!--Channel Avatar & Details-->
+                        <div class="channel-left">
+                            <div class="channel-avatar"></div>
+                            <div class="channel-details">
+                                <h3>Gia Huy Thai</h3>
+                                <p>1.5K subscribers</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Video Description Section-->
+                    <div class="video-description">
+                        <div class="video-description-text description-collapsed">
+                            This is a comprehensive tutorial on building a YouTube clone using React for the frontend and Node.js for the backend. We'll cover everything from setting up the project structure to implementing video upload, user authentication, and real-time features.
+
+                            🔥 What you'll learn:
+                            • React hooks and state management
+                            • Node.js API development
+                            • MongoDB database integration
+                            • Video upload and streaming
+                        </div>
+                        <button class="show-more-btn">Show more</button>
+                    </div>
+                </div>
+
+                <!--Video Comment Section-->
+                <div class="video-comments">
+                    <div class="video-comments-header">
+
                     </div>
                 </div>
                 
                 <!--Video Sidebar Section-->
                 <div class="video-sidebar">
-                    <div class="video-info">
-                        <h1 class="video-title">Project Title</h1>
-                        <div class="video-stats">
-                            <span class="video-views">1 views</span>
-                            <div class="video-actions">
-
+                    <div class="related-videos">
+                        <!--Related Video 1-->
+                        <div class="related-video-item">
+                            <!--Related Video Thumbnail-->
+                            <div class="related-thumbnail">
+                                <img src="https://via.placeholder.com/168x94/333/666?text=Thumbnail+1" alt="Video thumbnail">
+                            </div>
+                            <!--Related Video Info-->
+                            <div class="related-info">
+                                <div class="related-title">React Hooks Tutorial - Complete Guide for Beginners</div>
+                                <div class="related-channel">Gia Huy Thai</div>
+                                <div class="related-stats">5.2K views • 1 week ago</div>
                             </div>
                         </div>
-                    </div>
-                </div>
 
-            </div>
+                        <!--Related Video 2-->
+                        <div class="related-video-item">
+                            <!--Related Video Thumbnail-->
+                            <div class="related-thumbnail">
+                                <img src="https://via.placeholder.com/168x94/333/666?text=Thumbnail+1" alt="Video thumbnail">
+                            </div>
+                            <!--Related Video Info-->
+                            <div class="related-info">
+                                <div class="related-title">React Hooks Tutorial - Complete Guide for Beginners</div>
+                                <div class="related-channel">Gia Huy Thai</div>
+                                <div class="related-stats">5.2K views • 1 week ago</div>
+                            </div>
+                        </div>
 
-            <!--Project Details-->
-            <div class="project-details">
-                <div class="project-author">
-                    <div class="author-avatar"></div>
-                    <div class="author-info">
-                        <h3 class="author-name">Gia Huy Thai</h3>
-                        <p>Full Stack Developer</p>
-                    </div>"
-                </div>
+                        <!--Related Video 3-->
+                        <div class="related-video-item">
+                            <!--Related Video Thumbnail-->
+                            <div class="related-thumbnail">
+                                <img src="https://via.placeholder.com/168x94/333/666?text=Thumbnail+1" alt="Video thumbnail">
+                            </div>
+                            <!--Related Video Info-->
+                            <div class="related-info">
+                                <div class="related-title">React Hooks Tutorial - Complete Guide for Beginners</div>
+                                <div class="related-channel">Gia Huy Thai</div>
+                                <div class="related-stats">5.2K views • 1 week ago</div>
+                            </div>
+                        </div>
 
-                <div class="project-description">
-                    <p>This is only an example of project description for page testing</p>
+                        <!--Related Video 4-->
+                        <div class="related-video-item">
+                            <!--Related Video Thumbnail-->
+                            <div class="related-thumbnail">
+                                <img src="https://via.placeholder.com/168x94/333/666?text=Thumbnail+1" alt="Video thumbnail">
+                            </div>
+                            <!--Related Video Info-->
+                            <div class="related-info">
+                                <div class="related-title">React Hooks Tutorial - Complete Guide for Beginners</div>
+                                <div class="related-channel">Gia Huy Thai</div>
+                                <div class="related-stats">5.2K views • 1 week ago</div>
+                            </div>
+                        </div>
 
-                    <div class="project-meta">
-                        <span class="meta-item">React</span>
-                        <span class="meta-item">Node.js</span>
-                        <span class="meta-item">MongoDB</span>
-                        <span class="meta-item">Express</span>
-                        <span class="meta-item">HTML/CSS</span>
-                        <span class="meta-item">JavaScript</span>
-                        <span class="meta-item">TypeScript</span>
                     </div>
                 </div>
             </div>
@@ -1316,25 +1558,59 @@
 
         <script>
             // Project Main Content Functions
-            const projectsData = {
-                "project1": {},
-                "project2": {},
-                "project3": {},
-                "project4": {},
-                "project5": {},
-                "project6": {},
-                "project7": {},
-                "project8": {},
-                "project9": {},
-                "project10": {},
-                "project11": {},
-                "project12": {},
-                "project13": {},
-                "project14": {},
-                "project15": {},
-            }
+            // const projectsData = {
+            //     "project1": {},
+            //     "project2": {},
+            //     "project3": {},
+            //     "project4": {},
+            //     "project5": {},
+            //     "project6": {},
+            //     "project7": {},
+            //     "project8": {},
+            //     "project9": {},
+            //     "project10": {},
+            //     "project11": {},
+            //     "project12": {},
+            //     "project13": {},
+            //     "project14": {},
+            //     "project15": {},
+            // }
+
+            const galleryImages = [
+                "/signstreak/thumbnail.png",
+                "/signstreak/photo1.jpg",
+                "/signstreak/photo2.jpg",
+                "/signstreak/photo3.jpg",
+                "/signstreak/photo4.png",
+                "/signstreak/photo5.png",
+            ];
 
             let currentProject = "project1";
+
+            // Function to render gallery thumbnails and handle click
+            function renderGallery(images) {
+                const mainPhoto = document.getElementById("mainPhoto");
+                const galleryThumbnails = document.getElementById("galleryThumbnails");
+
+                // Clear existing thumbnails
+                galleryThumbnails.innerHTML = "";
+
+                // Create and append new thumbnails
+                images.forEach((image, idx) => {
+                    const thumbnail = document.createElement("div");
+                    thumbnail.className = "gallery-thumbnail" + (idx === 0 ? "active" : "");
+                    thumbnail.innerHTML = `<img src="${image}" alt="Gallery Thumbnail ${idx + 1}">`;
+                    thumbnail.onclick = function() {
+                        mainPhoto.src = image;
+                        document.querySelectorAll(".gallery-thumbnail").forEach(t => t.classList.remove("active"));
+                        thumbnail.classList.add("active");
+                    };
+                    galleryThumbnails.appendChild(thumbnail);
+                });
+
+            document.addEventListener("DOMContentLoaded", function() {
+                renderGallery(galleryImages);
+            })
 
             // Function to toggle sidebar
             function toggleSidebar() {
