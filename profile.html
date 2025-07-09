@@ -4,20 +4,211 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Profile</title>
-        <link rel="stylesheet" href="profileStyle.css">
+        <link rel="stylesheet" href="profile.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     </head>
     <body>
+        <!-- profile banner -->
         <div class="profile-banner">
-            Banner
+            <!-- profile banner background -->
+            <div class="profile-banner-background">
+                <div class="stars"></div>
+                <div class="shooting-star"></div>
+            </div>
+
+            <!-- profile banner content -->
+            <div class="profile-banner-content">
+                <!-- profile banner title -->
+                <div class="profile-banner-title">
+                    <h1>Welcome to my profile</h1>
+                </div>
+
+                <!-- profile banner description -->
+                <div class="profile-banner-description">
+                    <p>
+                        I am a software engineer with a passion for building web applications and mobile apps.
+                    </p>
+                </div>
+            </div>
         </div>
 
-        <div class="profile-avatar-container">
-            <div class="profile-avatar">
+        <!-- profile header -->
+        <div class="profile-header">
+            <!-- profile header content-->
+            <div class="profile-header-content">
+                <div class="profile-avatar">
+                    <img src="./profile/avatar.jpeg" alt="profile avatar">
+                </div>
+                <div class="profile-info">
+                    <h1>Gia Huy Thai</h1>
+                    <div class="profile-handle">@hweyth</div>
+                    <div class="profile-bio">Software Engineer & Data Analyst  •  Available for opportunities</div>
+                </div>
 
+                <!-- profile header actions -->
+                <div class="profile-header-actions">
+                    <!-- contact me button -->
+                    <button class="profile-header-button" onclick="sendEmail()">
+                        <i class="fa-solid fa-envelope"></i>
+                        Email Me
+                    </button>
+
+                    <!-- download resume button -->
+                    <button class="profile-header-button" onclick="downloadResume()">
+                        <i class="fa-solid fa-download"></i>
+                        Download Resume
+                    </button>
+                </div>
             </div>
-            <div class="profile-info">
+        </div>
 
+        <!-- profile navigation -->
+        <nav class="profile-nav">
+            <!-- profile nav container -->
+            <div class="profile-nav-container">
+                <!-- profile nav list -->
+                <ul class="profile-nav-list">
+                    <!-- about me tab -->
+                    <li class="profile-nav-item active" data-tab="about">About</li>
+
+                    <!-- projects tab -->
+                    <li class="profile-nav-item" data-tab="projects">Projects</li>
+
+                    <!-- resume tab -->
+                    <li class="profile-nav-item" data-tab="resume">Resume</li>
+
+                    <!-- contact tab -->
+                    <li class="profile-nav-item" data-tab="contact">Contact</li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- profile content -->
+        <div class="profile-content">
+            <!-- about me tab -->
+            <div class="profile-tab-content active" id="about">
+                <h2>About Me</h2>
+                <p>
+                    I am a software engineer with a passion for building web applications and mobile apps.
+                </p>
+            </div>
+
+            <!-- projects tab -->
+            <div class="profile-tab-content" id="projects">
+                <h2>Projects</h2>
+                <p>
+                    I am a software engineer with a passion for building web applications and mobile apps.
+                </p>
+            </div>
+
+            <!-- resume tab -->
+            <div class="profile-tab-content" id="resume">
+                <h2>Resume</h2>
+                <p>
+                    I am a software engineer with a passion for building web applications and mobile apps.
+                </p>
+            </div>
+
+            <!-- contact tab -->
+            <div class="profile-tab-content" id="contact">
+                <div class="contact-section">
+                    <!-- section title -->
+                    <h2 class="section-title">Let's Connect</h2>
+
+                    <!-- section description -->
+                    <p class="section-description">I'm always open to new opportunities and collaborations.</p>
+
+                    <!-- contact grid -->
+                    <div class="contact-grid">
+                        <!-- contact main -->
+                        <div class="contact-main">
+                            <!-- contact form -->
+                            <div class="contact-form">
+                                <!-- section title -->
+                                <h3 class="section-title">Send Me a Message</h3>
+
+                                <!-- contact form -->
+                                <form id="contact-form">
+                                    <!-- name input -->
+                                    <div class="form-group">
+                                        <label for="name">Name</label>
+                                        <input type="text" id="name" name="name" required>
+                                    </div>
+
+                                    <!-- email input -->
+                                    <div class="form-group">
+                                        <label for="email">Email</label>
+                                        <input type="email" id="email" name="email" required>
+                                    </div>
+
+                                    <!-- subject input -->
+                                    <div class="form-group">
+                                        <label for="subject">Subject</label>
+                                        <input type="text" id="subject" name="subject" required>
+                                    </div>
+
+                                    <!-- message input -->
+                                    <div class="form-group">
+                                        <label for="message">Message</label>
+                                        <textarea id="message" name="message" rows="5" required></textarea>
+                                    </div>
+
+                                    <!-- submit button -->  
+                                    <button type="submit" class="submit-btn">
+                                        <i class="fa-solid fa-paper-plane"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>  
+                    </div>
+                </div>
             </div>
         </div>
     </body>
+    <script>
+        function sendEmail() {
+            const email = 'thhuy1101@gmail.com';
+            const subject = 'Hello from you website';
+            const body = "Hi Gia Huy Thai, \n\nI came across your website and I'd like to connect with you. \n\nBest regards, \n[Your Name]";
+
+            const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            window.open(mailtoLink, '_blank');
+        }
+
+        function downloadResume() {
+            const resumePath = './resume_software_engineer.pdf';
+            const link = document.createElement('a');
+            
+            link.href = resumePath;
+            link.download = 'Gia Huy Thai - Resume.pdf';
+            
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const navItems = document.querySelectorAll('.profile-nav-item');
+            const navContents = document.querySelectorAll('.profile-tab-content');
+
+            navItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    navItems.forEach(navItem => navItem.classList.remove('active'));
+                    navContents.forEach(content => content.classList.remove('active'));
+
+                    // highlight the clicked tab
+                    item.classList.add('active');
+
+                    const tabId = item.getAttribute('data-tab');
+                    const tabContent = document.getElementById(tabId);
+                    
+                    // show the selected tab content
+                    if (tabContent) {
+                        tabContent.classList.add('active');
+                    }
+                });
+            });
+
+        });
+    </script>
 </html>
