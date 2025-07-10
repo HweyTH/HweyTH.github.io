@@ -30,3 +30,4 @@ bundle install
 bundle exec jekyll serve
 
 ```
+Visit ```http://localhost:4000``` to view it in your browser.
