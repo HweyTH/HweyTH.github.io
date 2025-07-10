@@ -6,6 +6,9 @@
         <title>Profile</title>
         <link rel="stylesheet" href="profile.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Plus+Jakarta+Sans:ital,opsz,wght@0,8..40,200..800;1,8..40,200..800&display=swap" rel="stylesheet">
     </head>
     <body>
         <!-- profile banner -->
@@ -219,10 +222,163 @@
 
             <!-- projects tab -->
             <div class="profile-tab-content" id="projects">
-                <h2>Projects</h2>
-                <p>
-                    I am a software engineer with a passion for building web applications and mobile apps.
-                </p>
+                <!-- projects section -->
+                <div class="projects-section">
+                    <!-- section title -->
+                    <h2 class="section-title">Current Projects</h2>
+                    
+                    <!-- section description -->
+                    <p class="section-description">
+                        Here are some projects that I'm currently working on.
+                    </p>
+
+                    <!-- projects grid -->
+                    <div class="projects-grid">
+                        <!-- project item 1 -->
+                        <div class="project-item">
+                            <!-- project header -->
+                            <div class="project-header">
+                                <div class="project-icon">
+                                    <i class="fa-solid fa-code"></i>
+                                </div>
+                                <div class="project-status">
+                                    <span class="status-badge active">In Progress</span>
+                                </div>
+                            </div>
+
+                            <!-- project content -->
+                            <div class="project-content">
+                                <h3 class="project-title">Personal Portfolio Website</h3>
+                                <p class="project-description">
+                                    A modern, responsive portfolio website built with vanilla HTML, CSS, and JavaScript. 
+                                    Features include animated backgrounds, interactive tabs, and a clean design inspired by popular platforms.
+                                </p>
+                                
+                                <!-- project details -->
+                                <div class="project-details">
+                                    <div class="project-date">
+                                        <i class="fa-solid fa-calendar"></i>
+                                        <span>Started: January 2024</span>
+                                    </div>
+                                    <div class="project-tech">
+                                        <i class="fa-solid fa-tags"></i>
+                                        <span>HTML, CSS, JavaScript</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- project item 2 -->
+                        <div class="project-item">
+                            <!-- project header -->
+                            <div class="project-header">
+                                <div class="project-icon">
+                                    <i class="fa-solid fa-brain"></i>
+                                </div>
+                                <div class="project-status">
+                                    <span class="status-badge active">In Progress</span>
+                                </div>
+                            </div>
+
+                            <!-- project content -->
+                            <div class="project-content">
+                                <h3 class="project-title">FauxLens</h3>
+                                <p class="project-description">
+                                    An AI tool that supports users to distinguish between real and fake news.
+                                </p>
+                                
+                                <!-- project details -->
+                                <div class="project-details">
+                                    <div class="project-date">
+                                        <i class="fa-solid fa-calendar"></i>
+                                        <span>Started: April 2025</span>
+                                    </div>
+                                    <div class="project-tech">
+                                        <i class="fa-solid fa-tags"></i>
+                                        <span>Python, Jupyter Notebook, Kaggle</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- project item 3 -->
+                        <div class="project-item">
+                            <!-- project header -->
+                            <div class="project-header">
+                                <div class="project-icon">
+                                    <i class="fa-solid fa-chart-line"></i>
+                                </div>
+                                <div class="project-status">
+                                    <span class="status-badge planning">Planning</span>
+                                </div>
+                            </div>
+
+                            <!-- project content -->
+                            <div class="project-content">
+                                <h3 class="project-title">Price Tracker Dashboard</h3>
+                                <p class="project-description">
+                                    An interactive dashboard that tracks the price of a product over time.
+                                </p>
+                                
+                                <!-- project details -->
+                                <div class="project-details">
+                                    <div class="project-date">
+                                        <i class="fa-solid fa-calendar"></i>
+                                        <span>Started: December 2024</span>
+                                    </div>
+                                    <div class="project-tech">
+                                        <i class="fa-solid fa-tags"></i>
+                                        <span>React, Node.js, MongoDB</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- project item 4 -->
+                        <div class="project-item">
+                            <!-- project header -->
+                            <div class="project-header">
+                                <div class="project-icon">
+                                    <i class="fa-solid fa-keyboard"></i>
+                                </div>
+                                <div class="project-status">
+                                    <span class="status-badge active">In Progress</span>
+                                </div>
+                            </div>
+
+                            <!-- project content -->
+                            <div class="project-content">
+                                <h3 class="project-title">Sign Streak 2</h3>
+                                <p class="project-description">
+                                    A web-based typing game that is your regular typing game, but with a twist and more. Using Hugging Face's trained model, the game allows real-time sign language typing.
+                                </p>
+                                
+                                <!-- project details -->
+                                <div class="project-details">
+                                    <div class="project-date">
+                                        <i class="fa-solid fa-calendar"></i>
+                                        <span>Started: February 2025</span>
+                                    </div>
+                                    <div class="project-tech">
+                                        <i class="fa-solid fa-tags"></i>
+                                        <span>Next.js, JavaScript, Tailwind CSS, Hugging Face</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- view more projects button -->
+                    <div class="view-more-projects">
+                        <a href="index.html" class="view-more-btn">
+                            <i class="fa-solid fa-external-link-alt"></i>
+                            View All Projects
+                        </a>
+                        <p class="view-more-description">
+                            Explore my complete project portfolio, including completed projects and hackathon submissions.
+                        </p>
+                    </div>
+                </div>
             </div>
 
             <!-- resume tab -->

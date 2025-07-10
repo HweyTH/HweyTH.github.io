@@ -5,9 +5,14 @@
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'DM Sans', sans-serif;
     background-color: #121212;
     color: #ffffff;
+}
+
+/* heading styles */
+h2, h3 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 /* responsive page */
@@ -88,6 +93,7 @@ body {
 
 /* profile banner title */
 .profile-banner-title {
+    font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 2.5rem;
     font-weight: 700;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
@@ -223,6 +229,7 @@ body {
 
 /* profile name */
 .profile-info h1 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: 4px;
@@ -502,6 +509,7 @@ body {
 
 /* contact item details */
 .contact-details h4 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
     margin: 0;
     font-size: 1rem;
     color: #ffffff;
@@ -559,6 +567,7 @@ body {
 
 /* contact details */
 .contact-details h4 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
     margin: 0 0 4px 0;
     font-size: 0.9rem;
     font-weight: 600;
@@ -653,6 +662,7 @@ body {
 
 /* section-title */
 .section-title {
+    font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 1.5rem;
     font-weight: 600;
     color: #ffffff;
@@ -719,6 +729,7 @@ body {
 
 /* skill content */
 .skill-content h4{
+    font-family: 'Plus Jakarta Sans', sans-serif;
     margin: 0 0 8px 0;
     font-size: 1.1rem;
     font-weight: 600;
@@ -803,6 +814,7 @@ body {
 
 /* timeline content h4 */
 .timeline-content h4 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
     margin: 0 0 8px 0;
     font-size: 1.2rem;
     font-weight: 600;
@@ -839,5 +851,251 @@ body {
     
     .about-text {
         font-size: 1rem;
+    }
+}
+
+/* projects section */
+.projects-section {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* section description */
+.section-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #ffffff;
+    margin-bottom: 32px;
+    opacity: 0.9;
+}
+
+/* projects grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+/* project item */
+.project-item {
+    background: #282828;
+    border: 1px solid #333;
+    border-radius: 16px;
+    padding: 24px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* project item hover */
+.project-item:hover {
+    border-color: #70af60;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(112, 175, 96, 0.15);
+}
+
+/* project header */
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+/* project icon */
+.project-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: #282828;
+    border-radius: 12px;
+    color: #70ae60;
+    font-size: 1.3rem;
+}
+
+/* project status */
+.project-status {
+    display: flex;
+    align-items: center;
+}
+
+/* status badge */
+.status-badge {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* active status badge */
+.status-badge.active {
+    background: rgba(112, 175, 96, 0.2);
+    color: #70af60;
+    border: 1px solid rgba(112, 175, 96, 0.3);
+}
+
+/* planning status badge */
+.status-badge.planning {
+    background: rgba(255, 193, 7, 0.2);
+    color: #ffc107;
+    border: 1px solid rgba(255, 193, 7, 0.3);
+}
+
+/* project content */
+.project-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* project title */
+.project-title {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0;
+}
+
+/* project description */
+.project-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #ffffff;
+    margin: 0;
+    opacity: 0.9;
+}
+
+/* project details */
+.project-details {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+/* project date and tech */
+.project-date,
+.project-tech {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: #ffffff;
+    opacity: 0.8;
+}
+
+/* project date and tech icons */
+.project-date i,
+.project-tech i {
+    color: #70af60;
+    font-size: 0.9rem;
+}
+
+/* view more projects */
+.view-more-projects {
+    text-align: center;
+    padding: 32px 0;
+    border-top: 1px solid #333;
+    margin-top: 32px;
+}
+
+/* view more button */
+.view-more-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #70af60, #5a8f4d);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+/* view more button hover */
+.view-more-btn:hover {
+    background: linear-gradient(135deg, #5a8f4d, #4a7a3f);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(112, 175, 96, 0.3);
+}
+
+/* view more button icon */
+.view-more-btn i {
+    font-size: 0.9rem;
+}
+
+/* view more description */
+.view-more-description {
+    margin-top: 12px;
+    font-size: 0.9rem;
+    color: #ffffff;
+    opacity: 0.7;
+}
+
+/* responsive design for projects */
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .project-item {
+        padding: 20px;
+    }
+    
+    .project-header {
+        margin-bottom: 12px;
+    }
+    
+    .project-title {
+        font-size: 1.2rem;
+    }
+    
+    .project-description {
+        font-size: 0.9rem;
+    }
+    
+    .view-more-btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .projects-grid {
+        gap: 16px;
+    }
+    
+    .project-item {
+        padding: 16px;
+    }
+    
+    .project-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+    }
+    
+    .status-badge {
+        padding: 4px 8px;
+        font-size: 0.7rem;
+    }
+    
+    .project-title {
+        font-size: 1.1rem;
+    }
+    
+    .project-description {
+        font-size: 0.85rem;
     }
 }
