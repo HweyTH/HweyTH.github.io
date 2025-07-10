@@ -251,8 +251,8 @@ body {
 
 /* profile header action buttons */
 .profile-header-button {
-    background: #373737;
-    color: #ffffff;
+    background: #56a246;
+    color: #000000;
     border: none;
     padding: 10px 16px;
     border-radius: 18px;
@@ -262,9 +262,15 @@ body {
     transition: all 0.2s;
 }
 
+/* profile header button icons */
+.profile-header-button i {
+    color: #000000;
+    margin-right: 8px;
+}
+
 /* profile header button hover */
 .profile-header-button:hover {
-    background: #4a4a4a;
+    background: #4a8a3a;
     transform: translateY(-1px);
 }
 
@@ -320,7 +326,7 @@ body {
     left: 0;
     right: 0;
     height: 3px;
-    background: #ffffff;
+    background: #88bd7a;
     border-radius: 2px 2px 0 0;
 }
 
@@ -467,6 +473,11 @@ body {
     display: flex;
     align-items: center;
     gap: 8px;
+}
+
+/* submit button icon */
+.submit-btn i {
+    color: #ffffff;
 }
 
 .submit-btn:hover {
