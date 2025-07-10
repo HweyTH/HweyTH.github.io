@@ -16,7 +16,7 @@ To run this portfolio locally with Jekyll:
 - [Bundler](https://bundler.io/)
 - [Jekyll](https://jekyllrb.com/)
 
-### Installation
+### Access
 
 ```bash
 # Clone the repository
@@ -31,3 +31,7 @@ bundle exec jekyll serve
 
 ```
 Visit ```http://localhost:4000``` to view it in your browser.
+
+OR
+
+Simply just visit ```https://hweyth.github.io``` on your browser.
