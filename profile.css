@@ -6,8 +6,8 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    background-color: #1a1a1a;
-    color: #fff;
+    background-color: #121212;
+    color: #ffffff;
 }
 
 /* responsive page */
@@ -73,7 +73,7 @@ body {
     height: 300px;
     position: relative;
     overflow: hidden;
-    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    background: #121212;
 }
 
 /* profile banner background */
@@ -181,9 +181,9 @@ body {
 
 /* profile header */
 .profile-header {
-    background: #212121;
+    background: #121212;
     padding: 20px 0;
-    border-bottom: 1px solid #373737;
+    border-bottom: 1px solid #575757;
 }
 
 /* profile header content */
@@ -224,20 +224,21 @@ body {
 /* profile name */
 .profile-info h1 {
     font-size: 1.5rem;
-    font-weight: 400;
+    font-weight: 700;
     margin-bottom: 4px;
+    color: #ffffff;
 }
 
 /* profile handle */
 .profile-handle {
-    color: #aaa;
+    color: #ffffff;
     font-size: 0.875rem;
     margin-bottom: 4px;
 }
 
 /* profile bio */
 .profile-bio {
-    color: #aaa;
+    color: #ffffff;
     font-size: 0.875rem;
 }
 
@@ -251,7 +252,7 @@ body {
 /* profile header action buttons */
 .profile-header-button {
     background: #373737;
-    color: white;
+    color: #ffffff;
     border: none;
     padding: 10px 16px;
     border-radius: 18px;
@@ -269,8 +270,8 @@ body {
 
 /* profile navigation */
 .profile-nav {
-    background: #212121;
-    border-bottom: 1px solid #373737;
+    background: #121212;
+    border-bottom: 1px solid #575757;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -295,7 +296,7 @@ body {
     padding: 16px 0;
     position: relative;
     cursor: pointer;
-    color: #aaa;
+    color: #ffffff;
     font-size: 0.875rem;
     font-weight: 500;
     transition: color 0.2s;
@@ -303,12 +304,12 @@ body {
 
 /* profile nav item hover */
 .profile-nav-item:hover {
-    color: #fff;
+    color: #ffffff;
 }
 
 /* profile nav item active */
 .profile-nav-item.active {
-    color: #fff;
+    color: #ffffff;
 }
 
 /* profile nav item after */
@@ -319,7 +320,7 @@ body {
     left: 0;
     right: 0;
     height: 3px;
-    background: #fff;
+    background: #ffffff;
     border-radius: 2px 2px 0 0;
 }
 
@@ -356,7 +357,7 @@ body {
 
 /* contact sidebar */
 .contact-sidebar {
-    background: #1a1a1a;
+    background: #282828;
     padding: 24px;
     border-radius: 12px;
     height: fit-content;
@@ -370,7 +371,7 @@ body {
 /* contact form label */
 .contact-form label {
     display: block;
-    color: #aaa;
+    color: #ffffff;
     font-size: 0.95rem;
     margin-bottom: 4px;
 }
@@ -383,7 +384,7 @@ body {
     border-radius: 6px;
     border: 1px solid #333;
     background: #232323;
-    color: #fff;
+    color: #ffffff;
     font-size: 1rem;
     margin-bottom: 4px;
 }
@@ -411,7 +412,7 @@ body {
 
 /* contact form improvements */
 .contact-form {
-    background: #1a1a1a;
+    background: #282828;
     padding: 24px;
     border-radius: 12px;
     border: 1px solid #333;
@@ -421,7 +422,7 @@ body {
     margin-bottom: 24px;
     font-size: 1.1rem;
     font-weight: 600;
-    color: #fff;
+    color: #ffffff;
 }
 
 .contact-form input,
@@ -431,7 +432,7 @@ body {
     border-radius: 8px;
     border: 1px solid #333;
     background: #212121;
-    color: #fff;
+    color: #ffffff;
     font-size: 0.95rem;
     transition: all 0.2s ease;
 }
@@ -439,13 +440,13 @@ body {
 .contact-form input:focus,
 .contact-form textarea:focus {
     outline: none;
-    border-color: #3ea6ff;
-    box-shadow: 0 0 0 3px rgba(62, 166, 255, 0.1);
+    border-color: #10b981;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
 }
 
 .contact-form label {
     display: block;
-    color: #aaa;
+    color: #ffffff;
     font-size: 0.9rem;
     font-weight: 500;
     margin-bottom: 8px;
@@ -454,8 +455,8 @@ body {
 }
 
 .submit-btn {
-    background: #3ea6ff;
-    color: #fff;
+    background: #56a246;
+    color: #ffffff;
     border: none;
     padding: 12px 24px;
     border-radius: 8px;
@@ -469,9 +470,9 @@ body {
 }
 
 .submit-btn:hover {
-    background: #1e90ff;
+    background: #4a8a3a;
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(62, 166, 255, 0.2);
+    box-shadow: 0 4px 12px rgba(86, 162, 70, 0.2);
 }
 
 /* contact info */
@@ -485,20 +486,20 @@ body {
 /* contact item icon */
 .contact-icon {
     font-size: 1.3rem;
-    color: #3ea6ff;
+    color: #70af60;
 }
 
 /* contact item details */
 .contact-details h4 {
     margin: 0;
     font-size: 1rem;
-    color: #fff;
+    color: #ffffff;
 }
 
 /* contact item details */
 .contact-details p {
     margin: 0;
-    color: #aaa;
+    color: #ffffff;
     font-size: 0.95rem;
 }
 
@@ -520,16 +521,16 @@ body {
     align-items: center;
     gap: 16px;
     padding: 16px;
-    background: #212121;
+    background: #282828;
     border-radius: 12px;
     border: 1px solid #333;
     transition: all 0.2s ease;
 }
 
 .contact-item:hover {
-    border-color: #3ea6ff;
+    border-color: #70af60;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(62, 166, 255, 0.1);
+    box-shadow: 0 4px 12px rgba(112, 175, 96, 0.1);
 }
 
 /* contact icon */
@@ -539,9 +540,9 @@ body {
     justify-content: center;
     width: 40px;
     height: 40px;
-    background: rgba(62, 166, 255, 0.1);
+    background: rgba(112, 175, 96, 0.1);
     border-radius: 10px;
-    color: #3ea6ff;
+    color: #70af60;
     font-size: 1.1rem;
 }
 
@@ -550,7 +551,7 @@ body {
     margin: 0 0 4px 0;
     font-size: 0.9rem;
     font-weight: 600;
-    color: #aaa;
+    color: #ffffff;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
@@ -558,7 +559,7 @@ body {
 .contact-details p {
     margin: 0;
     font-size: 1rem;
-    color: #fff;
+    color: #ffffff;
     font-weight: 500;
 }
 
@@ -571,7 +572,7 @@ body {
     margin-bottom: 20px;
     font-size: 1.1rem;
     font-weight: 600;
-    color: #fff;
+    color: #ffffff;
 }
 
 /* social grid */
@@ -587,10 +588,10 @@ body {
     align-items: center;
     gap: 12px;
     padding: 14px 16px;
-    background: #212121;
+    background: #282828;
     border: 1px solid #333;
     border-radius: 10px;
-    color: #fff;
+    color: #ffffff;
     text-decoration: none;
     font-size: 0.9rem;
     font-weight: 500;
@@ -598,19 +599,19 @@ body {
 }
 
 .social-link:hover {
-    border-color: #3ea6ff;
-    background: rgba(62, 166, 255, 0.05);
+    border-color: #70af60;
+    background: rgba(112, 175, 96, 0.05);
     transform: translateY(-1px);
-    box-shadow: 0 2px 8px rgba(62, 166, 255, 0.15);
+    box-shadow: 0 2px 8px rgba(112, 175, 96, 0.15);
 }
 
 .social-link i {
     font-size: 1.1rem;
-    color: #3ea6ff;
+    color: #70af60;
 }
 
 .social-link span {
-    color: #fff;
+    color: #ffffff;
 }
 
 /* responsive design for contact section */
@@ -626,5 +627,206 @@ body {
     
     .contact-sidebar {
         padding: 20px;
+    }
+}
+
+/* about section */
+.about-section {
+    margin-bottom: 48px;
+}
+
+/* about section last child */
+.about-section :last-child{
+    margin-bottom: 0;
+}
+
+/* section-title */
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 24px;
+}
+
+/* about section intro */
+.about-intro {
+    max-width: 800px;
+}
+
+/* about text */
+.about-text {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+/* about text last child */
+.about-intro :last-child {
+    margin-bottom: 0;
+}
+
+/* skill grid */
+.skill-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
+}
+
+/* skill item */
+.skill-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px;
+    background: #282828;
+    border: 1px solid #333;
+    border-radius: 12px;
+    transition: all 0.2s ease;
+}
+
+/* skill item hover */
+.skill-item:hover {
+    border-color: #70af60;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(112, 175, 96, 0.1);
+}
+
+/* skill icon */
+.skill-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: rgba(112, 175, 96, 0.1);
+    border-radius: 12px;
+    color: #70af60;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+}
+
+/* skill content */
+.skill-content h4{
+    margin: 0 0 8px 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+/* skill content p */
+.skill-content p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #ffffff;
+}
+
+/* timeline style */
+.timeline {
+    position: relative;
+    max-width: 800px;
+}
+
+/* timeline before */
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #333;
+}
+
+/* timeline-item */ 
+.timeline-item {
+    position: relative;
+    margin-bottom: 32px;
+    padding-left: 60px;
+}
+
+/* timeline last child */
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+/* timeline marker */
+.timeline-marker {
+    position: absolute;
+    left: 11px;
+    top: 8px;
+    width: 20px;
+    height: 20px;
+    background: #70af60;
+    border-radius: 50%;
+    border: 4px solid #1a1a1a;
+    z-index: 2;
+}
+
+/* timeline content */
+.timeline-content {
+    background: #282828;
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 20px;
+    transition: all 0.2s ease;
+}
+
+/* timeline content hover */
+.timeline-content:hover {
+    border-color: #70af60;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(112, 175, 96, 0.1);
+}
+
+/* timeline date */
+.timeline-date {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #70af60;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* timeline content h4 */
+.timeline-content h4 {
+    margin: 0 0 8px 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.timeline-content p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #ffffff;
+}
+
+/* responsive design for about section */
+@media (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .skill-item {
+        padding: 16px;
+    }
+    
+    .timeline-item {
+        padding-left: 50px;
+    }
+    
+    .timeline-marker {
+        left: 6px;
+        width: 16px;
+        height: 16px;
+    }
+    
+    .about-text {
+        font-size: 1rem;
     }
 }
